@@ -162,6 +162,18 @@ Use `?font=FONT_NAME` parameter as shown below
 ![Quote](https://github-readme-quotes-bay.vercel.app/quote?font=Redressed)
 ```
 
+The font parameter selects one of the fonts bundled with this project. Use the
+font key as it appears in the list below. Font keys are case-sensitive, and you
+can combine them with the other quote parameters by adding `&font=FONT_NAME`.
+
+```md
+![Quote](https://github-readme-quotes-bay.vercel.app/quote?theme=dark&layout=socrates&font=gabrielle)
+```
+
+#### Available Fonts
+
+default, gabrielle, Redressed, Calligraffitti, Architect, PixelifySans
+
 #### Font 1 (Default)
 
 ![Quote](https://github-readme-quotes-bay.vercel.app/quote?theme=dark)
@@ -173,6 +185,11 @@ Use `?font=FONT_NAME` parameter as shown below
 <!-- Scrnshot of quote in different fonts -->
 
 You can explore different fonts [here](./src/fonts/README.md).
+
+To contribute another font, add its font-face data to
+[`src/fonts/fonts.js`](./src/fonts/fonts.js), document the new parameter value in
+[`src/fonts/README.md`](./src/fonts/README.md), and include a preview link in
+this section.
 
 <b>Feel free to contribute different fonts.</b>
 
