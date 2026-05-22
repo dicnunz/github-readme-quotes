@@ -23,9 +23,17 @@ When combining a font with other options, append it with `&font=FONT_NAME`:
 ![Quote](https://github-readme-quotes-bay.vercel.app/quote?theme=dark&layout=socrates&font=gabrielle)
 ```
 
-To add another font, register it in [`fonts.js`](./fonts.js), use a stable
-parameter key, and add a preview example below so README users can copy the
-correct value.
+The endpoint accepts registered font keys, not arbitrary remote font URLs in
+the query string. To add another font, start from a source CSS URL such as a
+Google Fonts URL:
+
+```txt
+https://fonts.googleapis.com/css2?family=Redressed
+```
+
+Use that CSS to find the font file, convert the font file to embedded base64
+font data, register it in [`fonts.js`](./fonts.js), use a stable parameter key,
+and add a preview example below so README users can copy the correct value.
 
 ### Fonts
 

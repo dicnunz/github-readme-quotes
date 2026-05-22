@@ -170,6 +170,24 @@ can combine them with the other quote parameters by adding `&font=FONT_NAME`.
 ![Quote](https://github-readme-quotes-bay.vercel.app/quote?theme=dark&layout=socrates&font=gabrielle)
 ```
 
+The quote endpoint does not load arbitrary remote font URLs from the query
+string. To use a custom font, add it to the bundled font list first, then pass
+its registered key with `font`. For example, a contributor can start from a
+Google Fonts CSS URL such as:
+
+```txt
+https://fonts.googleapis.com/css2?family=Redressed
+```
+
+Convert the font file referenced by that CSS into embedded base64 font data,
+add it to [`src/fonts/fonts.js`](./src/fonts/fonts.js), and document the new
+key in [`src/fonts/README.md`](./src/fonts/README.md). After it is registered,
+users can preview it with a normal quote URL:
+
+```md
+![Quote](https://github-readme-quotes-bay.vercel.app/quote?theme=dark&font=Redressed)
+```
+
 #### Available Fonts
 
 default, gabrielle, Redressed, Calligraffitti, Architect, PixelifySans
@@ -186,7 +204,8 @@ default, gabrielle, Redressed, Calligraffitti, Architect, PixelifySans
 
 You can explore different fonts [here](./src/fonts/README.md).
 
-To contribute another font, add its font-face data to
+To contribute another font, use its source CSS URL to find the font file,
+convert that file into embedded base64 font data, add the font-face data to
 [`src/fonts/fonts.js`](./src/fonts/fonts.js), document the new parameter value in
 [`src/fonts/README.md`](./src/fonts/README.md), and include a preview link in
 this section.
